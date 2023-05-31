@@ -1,0 +1,1 @@
+export const requestPath = "https://swallow-backend-v2.herokuapp.com";
