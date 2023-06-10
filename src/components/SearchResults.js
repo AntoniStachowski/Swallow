@@ -87,6 +87,8 @@ const SearchResults = () => {
         setIsDialogOpen(true);
         setClickedMed({key: key, ...med})
 
+        let deploy = true;
+
         let medRefunds = [];
         medsDuplicates.forEach(meddd => {
             if (med.name === meddd.name && med.formDose === meddd.formDose && med.content === meddd.content) {
