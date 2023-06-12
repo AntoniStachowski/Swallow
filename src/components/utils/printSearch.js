@@ -144,10 +144,10 @@ import { saveAs } from 'file-saver';
 const printSearch = async (search, results) => {
     let raw = "<head><meta charset=\"utf-8\"></head>";
     raw += "<div id=\"root\">";
-    raw += "<div style=\"background-color: rgb(18, 18, 18); margin-left: 0px; margin-right: 0px; font-family:arial\">";
+    raw += "<div style=\"background-color: rgb(18, 18, 18); margin-left: 0px; margin-right: 0px; font-family:arial; width: 100%\">";
     raw += "<div></div>";
     raw += "<div style=\"display: flex; flex-direction: column; width: 100vw; height: 100vh; opacity: 1;\">";
-    raw += "<div id=\"logo\" style=\"width: 99%; position: fixed; z-index: 100; height: 120px; display: flex; align-content: center; align-items: center; border-bottom: 1px solid rgb(112, 112, 112); background-color: rgb(0,0,0);\">";
+    raw += "<div id=\"logo\" style=\"width: 100%; position: fixed; z-index: 100; height: 120px; display: flex; align-content: center; align-items: center; border-bottom: 1px solid rgb(112, 112, 112); background-color: rgb(0,0,0);\">";
     raw += "<div style=\"margin-left: 20px; margin-top: 20px;\">";
     raw += "<image src=\"logo2copy.svg\" style=\"width: 60px; height: 80px; float: left; margin-right: 40px;\"></image>";
     raw += "<div style=\"background-color: rgb(18, 18, 18); width: 600px; height: 56px; margin-left: 100px; margin-top: 32px; padding-top: 8px;\">";
