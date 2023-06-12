@@ -159,7 +159,7 @@ const SearchResults = () => {
                     >
                         <SearchIcon/>
                     </Fab>
-                    <FabPDF/>
+                    <FabPDF mode={false} search={input} results={meds}/>
                     
                 </div>
                 <div style={{marginLeft: 160, marginTop: 120}}>

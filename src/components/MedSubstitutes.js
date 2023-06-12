@@ -130,7 +130,7 @@ const MedSubstitutes = () => {
 
     return (
         <div style = {{padding: "0 20px 20px 20px"}}>
-            <FabPDF/>
+            <FabPDF mode={true} boxAmount={boxAmount} original={chosenMed} substitutes={substitutes}/>
             <Typography sx = {{
                 width: "calc(100vw - 40px)",
                 height: 125,
