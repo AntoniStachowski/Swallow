@@ -144,10 +144,10 @@ import { saveAs } from 'file-saver';
 const printSearch = async (search, results) => {
     let raw = "<head><meta charset=\"utf-8\"></head>";
     raw += "<div id=\"root\">";
-    raw += "<div style=\"background-color: rgb(18, 18, 18); margin-left: 0px; margin-right: 0px; font-family:arial; width: 100%\">";
+    raw += "<div style=\"background-color: rgb(18, 18, 18); margin-left: 0px; margin-right: 0px; font-family:arial; width: 100%; padding-bottom: 10px\">";
     raw += "<div></div>";
     raw += "<div style=\"display: flex; flex-direction: column; width: 100vw; height: 100vh; opacity: 1;\">";
-    raw += "<div id=\"logo\" style=\"width: 100%; position: fixed; z-index: 100; height: 120px; display: flex; align-content: center; align-items: center; border-bottom: 1px solid rgb(112, 112, 112); background-color: rgb(0,0,0);\">";
+    raw += "<div id=\"logo\" style=\"width: 99%; position: fixed; z-index: 100; height: 120px; display: flex; align-content: center; align-items: center; border-bottom: 1px solid rgb(112, 112, 112); background-color: rgb(0,0,0);\">";
     raw += "<div style=\"margin-left: 20px; margin-top: 20px;\">";
     raw += "<image src=\"logo2copy.svg\" style=\"width: 60px; height: 80px; float: left; margin-right: 40px;\"></image>";
     raw += "<div style=\"background-color: rgb(18, 18, 18); width: 600px; height: 56px; margin-left: 100px; margin-top: 32px; padding-top: 8px;\">";
@@ -159,7 +159,7 @@ const printSearch = async (search, results) => {
     raw += "<div style=\"margin-left: 160px; margin-top: 120px; padding-top: 100px\">";
     results.forEach((result) => {
         raw += "<div style=\"border-radius: 20px; max-width: 712px; margin: 25px 0px 25px -25px; padding: 20px 25px; background-color: rgb(18, 18, 18); font-size: 20px; color: rgb(255,255,255);\">";
-        raw += "<div style=\"pointer-events: none; line-height: 2; font-size: 24px; color: rgb(255, 193, 7);\">";
+        raw += result.isAvailable ? "<div style=\"pointer-events: none; line-height: 2; font-size: 24px; color: rgb(255, 193, 7);\">" : "<div style=\"pointer-events: none; line-height: 2; font-size: 24px; color: rgb(192, 192, 192);\">"
         raw += "<b>"+result.name+"</b>";
         raw += "</div>"+result.formDose + ", "+result.content;
         raw += "</div>";
@@ -167,7 +167,9 @@ const printSearch = async (search, results) => {
     raw += "</div>";
     raw += "</div>";
     raw += "</div>";
+    raw += "<div style=\"height: 100px; width: 100%;\"></div>";
     raw += "</div>";
+
 
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "text/html");
@@ -184,7 +186,7 @@ const printSearch = async (search, results) => {
     //console.log(response);
     let responseData = await (await response.blob());
     var FileSaver = require('file-saver');
-    FileSaver.saveAs(responseData, "test.pdf");
+    FileSaver.saveAs(responseData, "SearchResults.pdf");
 
 }
 

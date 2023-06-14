@@ -127,8 +127,8 @@ const printSubstitutes = async (original, subs, boxAmount) => {
     let raw = "<head><meta charset=\"utf-8\"><\head>";
     raw += "<body style=\"\">";
     raw += "<noscript>You need to enable JavaScript to run this app.</noscript>";
-    raw += "<div id=\"root\" style=\"font-family:arial\">";
-    raw += "<div style=\"background-color: rgb(18, 18, 18); margin-left: 0px; margin-right: 0px;\">";
+    raw += "<div id=\"root\" style=\"font-family:arial; padding-bottom:10px\">";
+    raw += "<div style=\"background-color: rgb(18, 18, 18); margin-left: 0px; margin-right: 0px; padding-bottom: 10px\">";
     raw += "<p style=\"pointer-events: none; line-height: 2; font-size: 36px; color: rgb(233, 30, 99); align-content: center; align-items: center; text-align: center;\"><b>Znalezione zamienniki</b></p>";
     raw += "<p style=\"pointer-events: none; line-height: 2; font-size: 27px; color: rgb(255, 193, 7); margin-left: 60px;\"><b>Wybrany lek</b></p>";
     raw += "<table class=\"MuiTable-root css-1ixli0-MuiTable-root\" style=\"color: rgb(255,255,255); margin-left: 20px; margin-right: 40px; border-spacing: 0px; font-size: 20px;\">";
@@ -156,7 +156,7 @@ const printSubstitutes = async (original, subs, boxAmount) => {
     raw += "</tbody>";
     raw += "</table>";
     raw += "<p style=\"pointer-events: none; line-height: 2; font-size: 27px; color: rgb(255, 193, 7); margin-left: 60px;\"><b>Zamienniki</b></p>";
-    raw += "<table class=\"MuiTable-root css-1ixli0-MuiTable-root\" style=\"color: rgb(255,255,255); margin-left: 20px; margin-right: 40px; border-spacing: 0px; font-size: 20px; font-weight: bold;\">";
+    raw += "<table class=\"MuiTable-root css-1ixli0-MuiTable-root\" style=\"color: rgb(255,255,255); margin-left: 20px; margin-right: 40px; border-spacing: 0px; font-size: 20px; font-weight: bold; padding-bottom:10px\">";
     raw += "<thead class=\"MuiTableHead-root css-15wwp11-MuiTableHead-root\" style=\"background-color: rgb(10,10,10); color: rgb(255,255,255); margin-top: 0px; font-weight: normal;\">";
     raw += "<th style=\"padding: 16px; text-align: left; border-top-left-radius: 10px; font-weight: normal;\" scope=\"col\" width=\"18%\">Nazwa</th>";
     raw += "<th style=\"padding: 16px; text-align: left;font-weight: normal;\" scope=\"col\" width=\"14%\">Dawka</th>";
@@ -200,6 +200,7 @@ const printSubstitutes = async (original, subs, boxAmount) => {
     raw += "</table>";
     raw += "</div>";
     raw += "</div>";
+    raw += "<div style=\"height: 100px; width: 100%;\"></div>";
     raw += "</body>";
 
 
@@ -218,7 +219,7 @@ const printSubstitutes = async (original, subs, boxAmount) => {
     //console.log(response);
     let responseData = await (await response.blob());
     var FileSaver = require('file-saver');
-    FileSaver.saveAs(responseData, "test.pdf");
+    FileSaver.saveAs(responseData, "Substitutes.pdf");
 }
 
 export default printSubstitutes;
