@@ -1,5 +1,5 @@
 export const escapeChar = [
-    {regexLiteral: / /g, replacement: "%20"},
+    //{regexLiteral: / /g, replacement: "%20"},
     {regexLiteral: /\\/g, replacement: "%5c"},
     {regexLiteral: /\|/g, replacement: "%7c"},
     {regexLiteral: /%/g, replacement: "%25"},
@@ -23,3 +23,4 @@ export const escapeChar = [
     {regexLiteral: /\^/g, replacement: "%5e"},
     {regexLiteral: /~/g, replacement: "%7e"},
 ]
+    
